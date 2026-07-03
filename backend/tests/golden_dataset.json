@@ -1,0 +1,59 @@
+{
+  "document": "sample_documents/test_doc.md",
+  "description": "黄金标准数据集：每个查询包含期望匹配的关键内容和召回率阈值",
+  "queries": [
+    {
+      "query": "什么是多模态RAG？",
+      "relevant_chunk_keywords": ["多模态RAG", "检索增强生成", "多种模态"],
+      "min_recall_threshold": 0.8,
+      "category": "definition"
+    },
+    {
+      "query": "文档解析支持哪些格式？",
+      "relevant_chunk_keywords": ["PDF", "DOCX", "PPTX", "Markdown", "解析"],
+      "min_recall_threshold": 0.8,
+      "category": "feature"
+    },
+    {
+      "query": "文本分块的参数是什么？",
+      "relevant_chunk_keywords": ["RecursiveCharacterTextSplitter", "chunk_size", "800", "150"],
+      "min_recall_threshold": 0.8,
+      "category": "config"
+    },
+    {
+      "query": "向量嵌入使用什么模型？",
+      "relevant_chunk_keywords": ["Qwen3-VL-Embedding-2B", "2048维", "统一"],
+      "min_recall_threshold": 0.8,
+      "category": "config"
+    },
+    {
+      "query": "Milvus集合包含哪些字段？",
+      "relevant_chunk_keywords": ["chunk_id", "doc_id", "2048维dense向量"],
+      "min_recall_threshold": 0.6,
+      "category": "detail"
+    },
+    {
+      "query": "混合检索的alpha参数是什么意思？",
+      "relevant_chunk_keywords": ["alpha", "dense", "sparse", "权重"],
+      "min_recall_threshold": 0.8,
+      "category": "config"
+    },
+    {
+      "query": "重排序使用什么模型？",
+      "relevant_chunk_keywords": ["bge-reranker-v2-m3", "交叉编码器", "精排"],
+      "min_recall_threshold": 0.8,
+      "category": "config"
+    },
+    {
+      "query": "系统架构包含哪些组件？",
+      "relevant_chunk_keywords": ["FastAPI", "Celery", "Redis", "MySQL", "Milvus"],
+      "min_recall_threshold": 0.6,
+      "category": "architecture"
+    }
+  ],
+  "evaluation_params": {
+    "default_top_k": 5,
+    "default_alpha": 0.5,
+    "ndcg_k": 5
+  }
+}
